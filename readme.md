@@ -45,7 +45,8 @@
 
 
 ## 上效果图
-![pc端的黑白色背景聊天图](image/pc-chat-white.jpg)
+
+![pc端的黑白色背景聊天图](image/pc-chat.jpg)
 
 ![手机端的白色背景聊天图](image/phone-chat-white.jpg)
 
