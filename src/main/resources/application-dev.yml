@@ -1,0 +1,34 @@
+server:
+  port: 8080
+
+
+spring:
+  http:
+    encoding:
+      charset: UTF-8
+
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 500MB
+      max-request-size: 500MB
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/bluecat?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: root
+#    password: root
+#    password: linyous
+
+
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    global-config:
+      db-config:
+        column-underline: true
+
+file-save-path: "D:/IDEAWorkSpace/1/file/"
+
+file-token-path: "sk-onZOIeQmV6syyOP7Ac71D9EfF45943Ed83CeC5348c45B2Aa"
