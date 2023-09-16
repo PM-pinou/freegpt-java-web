@@ -10,8 +10,8 @@ public class MySqlEncrypt {
         standardPBEStringEncryptor.setAlgorithm("PBEWithMD5AndDES");
         standardPBEStringEncryptor.setPassword("EWRREWRERWECCCXC");
         String name = standardPBEStringEncryptor.encrypt("root");
-        String password =standardPBEStringEncryptor.encrypt("blueCatPassWord");
-        String url =standardPBEStringEncryptor.encrypt("jdbc:mysql://43.130.33.164:3377/bluecat?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai");
+        String password =standardPBEStringEncryptor.encrypt("root");
+        String url =standardPBEStringEncryptor.encrypt("jdbc:mysql://127.0.0.1:3306/bluecat?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai");
         System.out.println("name="+name);
         System.out.println("password="+password);
         System.out.println("url="+url);
