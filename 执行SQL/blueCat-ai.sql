@@ -292,8 +292,8 @@ CREATE TABLE `prompt_model` (
   `content` varchar(1000) CHARACTER SET utf8mb4 NOT NULL COMMENT '提示内容',
   `state` tinyint(4) NOT NULL COMMENT '0，无效；1，有效',
   `sort` tinyint(4) NOT NULL DEFAULT '0' COMMENT '排序值',
-  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `create_time` datetime DEFAULT NULL,
+  `update_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
