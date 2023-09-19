@@ -2,7 +2,8 @@
  ### 后端架构：mysql,springBoot 部署简单维护也简单
  ###蓝猫AI后端服务指引
 ### 效果可以体验 ： http://www.chosen1.xyz/
-### 对应前端地址： https://gitee.com/lixinjiuhao/chatgpt-web-java
+### 对应蓝猫ai前端地址： https://gitee.com/lixinjiuhao/chatgpt-web-java
+### 管理后台前端地址（共用一个后端服务）：https://gitee.com/Linyous/blue-cat-commercial-admin-ui
  ### 如果没有合适的代理地址可以走我这边的代理，免费
  #### 步骤1：
     在蓝猫AI http://www.chosen1.xyz/ 注册账号
@@ -45,12 +46,18 @@
 
 
 ## 上效果图
-
+### pc聊天效果图
 ![pc端的黑白色背景聊天图](image/pc-chat.jpg)
-
+### 手机端聊天效果图
 ![手机端的白色背景聊天图](image/phone-chat-white.jpg)
-
+### 绘画效果图
 ![mj绘画](image/draw.jpeg)
+### 后端管理首页
+![首页](image/后端首页.jpeg)
+### 渠道管理
+![渠道管理](image/渠道管理.jpeg)
+### 通道管理
+![渠道管理](image/通道管理.jpeg)
 
 
 ## 项目启动准备
