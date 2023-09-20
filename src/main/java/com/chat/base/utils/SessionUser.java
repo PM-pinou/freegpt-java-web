@@ -67,16 +67,12 @@ public class SessionUser {
     /**
      * 管理账号集合，目前直接写死到项目中
      */
-    private static Set<String> adminSet = new HashSet<>();
+    public static Set<String> adminSet = new HashSet<>();
 
+
+    //新增管理员
     static {
-        adminSet.add("18589224217");// laoban
-        adminSet.add("15889198403");// liuzilin
-        adminSet.add("18230675983");// lixin
-        adminSet.add("13212631576");// luoshixin
-        adminSet.add("15515600808"); // admin1
-        adminSet.add("15565139513"); // admin2
-        adminSet.add("827034613@qq.com");//测试人员
+        adminSet.add("xxxx");
     }
 
     /**

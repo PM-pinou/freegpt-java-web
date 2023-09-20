@@ -79,13 +79,15 @@ vm options添加： -Dspring.profiles.active=prod 则代表 加载 application-p
 
 # 项目部署 方式1：
  ##服务器中运行脚本： 
-    java -jar xxx.jar --spring.profiles.active=dev
+     nohup java -jar -Xmx512m -Xms512m -XX:MaxPermSize=256m -XX:PermSize=128m -XX:MetaspaceSize=256M  -XX:MaxMetaspaceSize=256M  -XX:+UseParallelGC -XX:+PrintGCDetails -XX:+PrintGCDateStamps -Xloggc:/var/log/myapp/gc.log  chat-base-v2.0.jar --spring.profiles.active=prod --manager.accounts=123123,123123123
+     或者
+     nohup java -jar   chat-base-v2.0.jar --spring.profiles.active=prod --manager.accounts=123123,123123123
+     manager-account是指定管理账号
  ## 本地运行：
-     线上环境
-     vm option添加：-Dspring.profiles.active=prod
-     nohup java -jar -Xmx512m -Xms512m -XX:MaxPermSize=256m -XX:PermSize=128m -XX:MetaspaceSize=256M  -XX:MaxMetaspaceSize=256M  -XX:+UseParallelGC -XX:+PrintGCDetails -XX:+PrintGCDateStamps -Xloggc:/var/log/myapp/gc.log  blue-cat-0.0.8-SNAPSHOT.jar --spring.profiles.active=prod 
-     本地环境
-     vm option添加：-Dspring.profiles.active=dev
+ ### 走线上环境配置
+     vm option添加：-Dspring.profiles.active=prod -Dmanager.accounts=123123,123123
+### 本地环境配置
+     vm option添加：-Dspring.profiles.active=dev -Dmanager.accounts=123123,123123
 
 ## maven打包命令
     mvn clean install -U -Dmaven.test.skip=true

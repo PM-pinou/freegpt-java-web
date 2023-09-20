@@ -17,9 +17,11 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/bluecat?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
     username: root
-#    password: root
+    password: root
 #    password: linyous
 
+# 管路员账号，以逗号分开
+#manager.accounts: "123123,123123123"
 
 
 mybatis-plus:

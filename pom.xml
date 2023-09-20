@@ -10,9 +10,9 @@
     </parent>
     <groupId>com.chat.base</groupId>
     <artifactId>chat-base</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>chat-base</name>
-    <description>chat-base</description>
+    <version>v2.0</version>
+    <name>blue-cat</name>
+    <description>蓝猫ai服务</description>
     <packaging>jar</packaging>
     <properties>
         <java.version>1.8</java.version>
