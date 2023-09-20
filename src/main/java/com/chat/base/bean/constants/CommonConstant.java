@@ -13,6 +13,10 @@ public  class CommonConstant {
      * 登录失效三小时
      */
     public final static int CACHE_TIME_OUT = 123125920;
+    /**
+     * 验证码实现五分钟
+     */
+    public final static int CACHE_VERIFICATION_TIME_OUT = 5;
 
     /**
      * 通用的敏感词过滤通道ID

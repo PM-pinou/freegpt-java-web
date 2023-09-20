@@ -31,4 +31,9 @@ public class UserInfoRegisterReq {
     private String username;
 
     private String appName;
+    /**
+     * 验证码
+     */
+    @NotNull(message = "验证码不能为空")
+    private String verificationCode;
 }

@@ -63,7 +63,7 @@ public class WebConfig implements WebMvcConfigurer {
                 .excludePathPatterns(
                         "/chat/createTask","/chat/drawTaskResult",
                         "/prompt/getPromptGroup","/popupInfo/getPopupInfo",
-                        "/userInfo/login","/userInfo/register","/check/text",
+                        "/userInfo/login","/userInfo/register","/check/text","/userInfo/register/send/**",
                         "/chat/streamChatWithWeb/api/chat",
                         "/v1/chat/completions"
                 )
