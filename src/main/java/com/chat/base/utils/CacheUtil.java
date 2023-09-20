@@ -13,12 +13,25 @@ public class CacheUtil {
 
     private static Cache<String, CacheUserInfoVo> cache = CacheBuilder.newBuilder().expireAfterWrite(CommonConstant.CACHE_TIME_OUT, TimeUnit.SECONDS).build();
 
+    private static Cache<String, String > cacheVerification = CacheBuilder.newBuilder().expireAfterWrite(CommonConstant.CACHE_VERIFICATION_TIME_OUT, TimeUnit.MINUTES).build();
+
     public static void put(String key, CacheUserInfoVo value) {
         cache.put(key, value);
     }
 
+    public static void putVerification(String key, String value) {
+        cacheVerification.put(key, value);
+    }
+
     public static CacheUserInfoVo getIfPresent(String key){
         return cache.getIfPresent(key);
+    }
+    public static String getVerification(String key) {
+        return cacheVerification.getIfPresent(key);
+    }
+
+    public static ConcurrentMap<String, String > getVerificationAll() {
+        return cacheVerification.asMap();
     }
 
 
@@ -42,13 +55,19 @@ public class CacheUtil {
     public static void invalidate(String key){
         cache.invalidate(key);
     }
-
     /**
      * 删除登录缓存
      * @param key
      */
     public static void removeCache(String key){
         cache.asMap().remove(key);
+    }
+    /**
+     * 删除验证吗
+     * @param key
+     */
+    public static void removeVerificationCache(String key){
+        cacheVerification.asMap().remove(key);
     }
 
 }

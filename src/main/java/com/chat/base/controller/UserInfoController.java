@@ -6,15 +6,14 @@ import com.chat.base.bean.constants.CommonConstant;
 import com.chat.base.bean.constants.LimitEnum;
 import com.chat.base.bean.constants.OpEnum;
 import com.chat.base.bean.constants.UserLevelEnum;
+import com.chat.base.bean.dto.ToEmailDto;
 import com.chat.base.bean.entity.UserInfo;
-import com.chat.base.bean.req.UserInfoLoginReq;
-import com.chat.base.bean.req.UserInfoRegisterReq;
-import com.chat.base.bean.req.UserQueryReq;
-import com.chat.base.bean.req.UserUpdateReq;
+import com.chat.base.bean.req.*;
 import com.chat.base.bean.vo.CacheUserInfoSecretVo;
 import com.chat.base.bean.vo.CacheUserInfoVo;
 import com.chat.base.handler.UserLogManager;
 import com.chat.base.handler.UserManager;
+import com.chat.base.service.MailService;
 import com.chat.base.utils.*;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.annotations.Param;
@@ -44,6 +43,9 @@ public class UserInfoController extends BaseController{
 
     @Autowired
     private UserLogManager userLogManager;
+
+    @Autowired
+    public MailService mailService;
 
     /**
      * 获取已登录的用户信息
@@ -134,7 +136,7 @@ public class UserInfoController extends BaseController{
 
     @GetMapping("/userInfo/test")
     public ResultVO test(@Param("model")String model){
-       return ResultVO.success(userManager.test(model));
+        return ResultVO.success(userManager.test(model));
     }
 
     /**
@@ -175,7 +177,15 @@ public class UserInfoController extends BaseController{
         log.info("register registerReq = {}",registerReq);
         try {
             String account = registerReq.getAccount();
-            if(RegexUtil.validateEmail(account)||RegexUtil.validatePhone(account)){
+            if(RegexUtil.validateEmail(account)){
+                String ip = HttpUtil.getIpAddress();
+                String verification = CacheUtil.getVerification(registerReq.getAccount());
+                if(null==verification || !verification.equals( registerReq.getVerificationCode())){
+                    return ResultVO.fail("验证码错误!");
+                }
+                return userManager.register(registerReq,ip);
+            }else if(RegexUtil.validatePhone(account)){
+                // TODO 这里需要写短信验证码逻辑
                 String ip = HttpUtil.getIpAddress();
                 return userManager.register(registerReq,ip);
             }
@@ -200,7 +210,33 @@ public class UserInfoController extends BaseController{
         }
         return ResultVO.fail("服务器繁忙!请联系作者！");
     }
+    /**
+     * 发送邮箱验证码
+     */
+    @RequestMapping("/userInfo/register/send/verification")
+//    @VisitLimit(value = {LimitEnum.IP},scope = CommonConstant.NO_LOGIN_SCOPE)
+    private ResultVO<Object> queryUserLog(@RequestBody @Valid UserInfoRegisterVerificationReq verificationReq){
+        log.info("verificationReq verificationReq = {}",verificationReq);
+        String account = verificationReq.getAccount();
+        if(RegexUtil.validateEmail(account)){
+            Boolean aBoolean = mailService.sendEmailVerCode(ToEmailDto.builder().tos(account).build());
+            return ResultVO.success(aBoolean);
+        }else if (RegexUtil.validatePhone(account)){
 
+        }
+        return ResultVO.fail("服务器繁忙!请联系作者");
+    }
+
+    @RequestMapping("/userInfo/register/send/verification/get")
+    private ResultVO<Object> verification(@RequestBody UserInfoRegisterVerificationReq verificationReq){
+        log.info("verificationReq verificationReq = {}",verificationReq);
+        String verification = CacheUtil.getVerification(verificationReq.getAccount());
+        return ResultVO.success(verification);
+    }
+    @RequestMapping("/userInfo/register/send/verification/getAll")
+    private ResultVO<Object> verificationAll(){
+        return ResultVO.success(CacheUtil.getVerificationAll());
+    }
 
 }
 

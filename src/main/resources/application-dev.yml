@@ -21,6 +21,33 @@ spring:
 #    password: linyous
 
 
+  # 邮箱基本配置
+  mail:
+    # 配置 smtp 服务主机地址
+    # qq 邮箱     smtp.qq.com    端口号 465 或 587
+    # sina       smtp.sina.com
+    # aliyun     smtp.aliyun.com
+    # 163        smtp.163.com   端口号 465 或 994
+    host: smtp.qq.com
+    # 发送者邮箱
+    username: xxxxxxxx@qq.com
+    # 在邮箱内申请的授权码
+    password:
+    # 端口号
+    port: 587
+    # 默认的邮件编码为UTF-8
+    default-encoding: UTF-8
+    # 其他参数
+    properties:
+      mail:
+        # 配置SSL 加密工厂
+        smtp:
+          ssl:
+            # 本地测试， 先放开ssl
+            enable: false
+            required: false
+          #开启debug模式，这样邮件发送过程的日志会在控制台打印出来，方便排查错误
+        debug: true
 
 mybatis-plus:
   configuration:
