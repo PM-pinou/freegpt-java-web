@@ -78,7 +78,8 @@ vm options添加： -Dspring.profiles.active=prod 则代表 加载 application-p
 ![步骤二](image/vm配置解释说明.jpeg)
 
 # 项目部署 方式1：
- ##服务器中运行脚本： 
+
+##服务器中运行脚本： 
      nohup java -jar -Xmx512m -Xms512m -XX:MaxPermSize=256m -XX:PermSize=128m -XX:MetaspaceSize=256M  -XX:MaxMetaspaceSize=256M  -XX:+UseParallelGC -XX:+PrintGCDetails -XX:+PrintGCDateStamps -Xloggc:/var/log/myapp/gc.log  chat-base-v2.0.jar --spring.profiles.active=prod --manager.accounts=123123,123123123
      或者
      nohup java -jar   chat-base-v2.0.jar --spring.profiles.active=prod --manager.accounts=123123,123123123
