@@ -180,7 +180,7 @@ public class UserInfoController extends BaseController{
             if(RegexUtil.validateEmail(account)){
                 String ip = HttpUtil.getIpAddress();
                 String verification = CacheUtil.getVerification(registerReq.getAccount());
-                if(null==verification || !verification.equals( registerReq.getVerificationCode())){
+                if(null==verification || !verification.toLowerCase().equals( registerReq.getVerificationCode().toLowerCase())){
                     return ResultVO.fail("验证码错误!");
                 }
                 return userManager.register(registerReq,ip);
