@@ -1,6 +1,5 @@
 package com.chat.base.controller;
 
-import com.alibaba.fastjson.JSONObject;
 import com.chat.base.bean.annotation.VisitLimit;
 import com.chat.base.bean.common.BaseCodeEnum;
 import com.chat.base.bean.constants.*;
@@ -205,23 +204,5 @@ public class AIChatController extends BaseController {
                 .stream(true)
                 .build(), response.getOutputStream(), cacheUserInfoVo.getGptApiTokenVo().getToken());
     }
-
-
-    @PostMapping("/chat/createMjTask")
-    public ResultVO createMjImageTask(@RequestBody @Valid SubmitDTO submitDTO) {
-        submitDTO.setAction(Action.IMAGINE);
-        log.info("createMjImageTask submitDTO={}", submitDTO);
-        String imageTask = OpenGptUtil.createMjImageTask(submitDTO);
-        if (StringUtils.isEmpty(imageTask)) {
-            return ResultVO.fail("生成图片失败");
-        }
-        HashMap<String, String> taskMap = new HashMap<>();
-//      测试使用
-//        JSONObject jsonObject = JSONObject.parseObject("{\"code\":1,\"description\":\"成功\",\"result\":\"4926064381498245\"}");
-        JSONObject jsonObject = JSONObject.parseObject(imageTask);
-        taskMap.put("taskId", jsonObject.getString("result"));
-        return ResultVO.success(taskMap);
-    }
-
 
 }

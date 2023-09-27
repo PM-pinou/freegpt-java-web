@@ -1,6 +1,5 @@
 package com.chat.base.job;
 
-import com.alibaba.fastjson.JSONObject;
 import com.chat.base.bean.constants.CommonConstant;
 import com.chat.base.bean.constants.ConsumptionConstant;
 import com.chat.base.bean.constants.ModelPriceEnum;
@@ -13,7 +12,6 @@ import com.chat.base.handler.UserManager;
 import com.chat.base.handler.model.bean.QueryDrawModelResult;
 import com.chat.base.service.impl.UserInfoServiceImpl;
 import com.chat.base.utils.CacheUtil;
-import com.chat.base.utils.OpenGptUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
