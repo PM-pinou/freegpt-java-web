@@ -1,8 +1,8 @@
 #!/bin/bash
 # jdk的bin保存的位置
-JDK_HOME="/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.372.b07-1.el7_9.x86_64/jre/bin/java"
+JDK_HOME="/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.382.b05-1.el7_9.x86_64/jre/bin/java"
 # jvm的参数
-VM_OPTS="-XX:MaxPermSize=256m -XX:PermSize=128m -XX:MetaspaceSize=256M -XX:MaxMetaspaceSize=256M -XX:+UseParallelGC -XX:+PrintGCDetails -XX:+PrintGCDateStamps -Xloggc:/var/log/myapp/gc.log"
+VM_OPTS="-XX:MaxPermSize=1024m -XX:PermSize=512m -XX:MetaspaceSize=1024M -XX:MaxMetaspaceSize=512M -XX:+UseParallelGC -XX:+PrintGCDetails -XX:+PrintGCDateStamps -Xloggc:/var/log/myapp/gc.log"
 # 启动环境配置
 SPB_OPTS="--spring.profiles.active=prod"
 # 启动jar存放的位置
@@ -10,7 +10,7 @@ APP_LOCATION="/www/wwwroot/default/chatgpt-java-web/target/chatgpt-java-web-0.0.
 # 将要启动进程的命令
 APP_NAME="chatgpt-java-web"
 # 自己的 git项目的地址
-GIT_URL="https://gitee.com/lixinjiuhao/chatgpt-java-web.git"
+GIT_URL="https://github.com/PM-pinou/freegpt-java-web.git"
 # git clone下来 项目的路径
 APP_DIR="/www/wwwroot/default/chatgpt-java-web"
 
