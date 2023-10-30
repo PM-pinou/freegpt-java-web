@@ -44,6 +44,17 @@ public class UserAccessRuleUtil{
         return userAccessRule;
     }
 
+    public static UserAccessRule getAccessRuleNETGpt3(Long userId){
+        UserAccessRule userAccessRule = new UserAccessRule();
+        userAccessRule.setUserId(userId);
+        userAccessRule.setServiceType(ModelServiceTypeConstant.CHAT_NET_GPT_MODEL3);
+        userAccessRule.setUseNumber(30);
+        userAccessRule.setStartEffectiveTime(LocalDateTime.now());
+        userAccessRule.setEndEffectiveTime(LocalDateTime.now().plusDays(1));
+        userAccessRule.setCreateTime(LocalDateTime.now());
+        return userAccessRule;
+    }
+
     public static void main(String[] args) {
         System.out.println(UserAccessRuleUtil.getAccessRuleGpt3(123L));
     }

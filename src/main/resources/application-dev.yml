@@ -17,11 +17,11 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/bluecat?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
     username: root
-    password: root
+    password: 123QAZwsxedc..
 #    password: linyous
 
 # 管路员账号，以逗号分开
-#manager.accounts: "123123,123123123"
+  manager.accounts: "123123,123123123"
 
   # 邮箱基本配置
   mail:
@@ -30,13 +30,13 @@ spring:
     # sina       smtp.sina.com
     # aliyun     smtp.aliyun.com
     # 163        smtp.163.com   端口号 465 或 994
-    host: smtp.qq.com
+    host: smtp.126.com
     # 发送者邮箱
-    username: xxxxxxxx@qq.com
+    username: freegpt_web@126.com
     # 在邮箱内申请的授权码
-    password:
+    password: UVALURZJIYHZEXFL
     # 端口号
-    port: 587
+    port: 25
     # 默认的邮件编码为UTF-8
     default-encoding: UTF-8
     # 其他参数

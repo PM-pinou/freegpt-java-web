@@ -72,7 +72,7 @@ public class SessionUser {
 
     //新增管理员
     static {
-        adminSet.add("xxxx");
+        adminSet.add("2504420230@qq.com");
     }
 
     /**

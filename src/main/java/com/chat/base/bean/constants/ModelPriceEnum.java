@@ -21,7 +21,8 @@ public enum ModelPriceEnum {
     GPT_3_TURBO_16K( "gpt-3.5-turbo-16k",  30L,40L,3800),
     GPT_3_TURBO_16K_0613( "gpt-3.5-turbo-16k-0613", 30L,40L,3800),
     M_J( "Midjourney", 1L,0L,380000),//暂时免费开放
-    claude( "claude-2", 15L,20L,3000);
+    claude( "claude-2", 15L,20L,3000),
+    NET_GPT_3_TURBO_16K( "net-gpt-3.5-turbo-16k", 600L,1200L,8000);
 
 
     private String model;

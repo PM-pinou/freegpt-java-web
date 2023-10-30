@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component;
  * 普通用户
  * 调用chat-gpt3模型的 每天 10次
  */
-@Component(UserLevelConstant.COMMON_USER + ModelServiceTypeConstant.CHAT_GPT_MODEL4)
-public class CommonUserChatGptUserServiceTypeRule4 implements UserServiceTypeRule<UserLevelAccessVo> {
+@Component(UserLevelConstant.COMMON_USER + ModelServiceTypeConstant.CHAT_NET_GPT_MODEL3)
+public class CommonUserChatGptUserServiceTypeRuleNET3 implements UserServiceTypeRule<UserLevelAccessVo> {
 
     @Override
     public boolean rule(String userLevel, UserLevelAccessVo accessVo) {

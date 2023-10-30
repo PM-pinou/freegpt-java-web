@@ -87,7 +87,7 @@ public class ChatBaseOpenAiProxyService extends ChatBaseOpenAiService {
                     .followSslRedirects(true)
                     .addInterceptor(new ChatBaseAuthenticationInterceptor(urlConstants.getPrefix()+token,urlConstants.getAuthorization()))
                     .connectionPool(new ConnectionPool(100, 60, TimeUnit.SECONDS))
-                    .readTimeout(10, TimeUnit.SECONDS)
+                    .readTimeout(30, TimeUnit.SECONDS)
                     .build();
         }
         // Create proxy object
@@ -100,7 +100,7 @@ public class ChatBaseOpenAiProxyService extends ChatBaseOpenAiService {
         return new OkHttpClient.Builder()
                 .addInterceptor(new ChatBaseAuthenticationInterceptor(urlConstants.getPrefix()+token,urlConstants.getAuthorization()))
                 .connectionPool(new ConnectionPool(100, 60, TimeUnit.SECONDS))
-                .readTimeout(10, TimeUnit.SECONDS)
+                .readTimeout(30, TimeUnit.SECONDS)
                 .build();
     }
 

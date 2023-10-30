@@ -27,6 +27,7 @@ public class TokenUtil {
         modelMap.put(ModelPriceEnum.GPT_4_32K_0314.getModel(), registry.getEncodingForModel(ModelType.GPT_4));
         modelMap.put(ModelPriceEnum.GPT_4_0314.getModel(), registry.getEncodingForModel(ModelType.GPT_4));
         modelMap.put(ModelPriceEnum.GPT_4_0613.getModel(), registry.getEncodingForModel(ModelType.GPT_4));
+        modelMap.put(ModelPriceEnum.NET_GPT_3_TURBO_16K.getModel(), registry.getEncodingForModel(ModelType.GPT_4));
     }
 
     /**
