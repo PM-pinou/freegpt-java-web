@@ -28,7 +28,7 @@ public  class CommonConstant {
     /**
      * 公众号的二维码
      */
-    public final static String OFFICIAL_ACCOUNT = "http://43.153.112.145:1002/wechat.jpeg";
+    public final static String OFFICIAL_ACCOUNT = "https://blog.hi-cat.top/wp-content/uploads/2023/10/添加.jpg";
     /**
      * 聊天的来源
      */
