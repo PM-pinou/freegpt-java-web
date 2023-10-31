@@ -23,7 +23,7 @@ import java.util.Arrays;
 @MapperScan("com.chat.base.mapper.**")
 public class ChatBaseApplication {
 
-    @Value("${manager.accounts}")
+//    @Value("${manager.accounts}")
     private String managerAccounts;
 
 
@@ -34,7 +34,7 @@ public class ChatBaseApplication {
 
     @PostConstruct
     public void initManagerAccount(){
-        SessionUser.adminSet.addAll(Arrays.asList(managerAccounts.split(",")));
+//        SessionUser.adminSet.addAll(Arrays.asList(managerAccounts.split(",")));
         log.info("initManagerAccount adminSet={}", JSON.toJSONString(SessionUser.adminSet));
     }
 }

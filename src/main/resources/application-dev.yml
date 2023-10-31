@@ -15,13 +15,13 @@ spring:
 
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/bluecat?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://127.0.0.1:3306/freegpt?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
     username: root
     password: 123QAZwsxedc..
 #    password: linyous
 
 # 管路员账号，以逗号分开
-  manager.accounts: "123123,123123123"
+  manager.accounts: "2504420230@qq.com"
 
   # 邮箱基本配置
   mail:
@@ -61,3 +61,71 @@ mybatis-plus:
 file-save-path: "D:/IDEAWorkSpace/1/file/"
 
 file-token-path: "sk-onZOIeQmV6syyOP7Ac71D9EfF45943Ed83CeC5348c45B2Aa"
+
+
+# server:
+#   port: 8080
+
+
+# jasypt:
+#   encryptor:
+#     password: EWRREWRERWECCCXC
+#     algorithm: PBEWithMD5AndDES
+
+# spring:
+#   http:
+#     encoding:
+#       charset: UTF-8
+
+#   servlet:
+#     multipart:
+#       enabled: true
+#       max-file-size: 500MB
+#       max-request-size: 500MB
+
+#   datasource:
+#     driver-class-name: com.mysql.cj.jdbc.Driver
+#     url: jdbc:mysql://127.0.0.1:3306/freegpt?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+#     username: freegpt
+#     password: 123QAZwsxedc..
+
+# mybatis-plus:
+#   configuration:
+#     map-underscore-to-camel-case: true
+#     global-config:
+#       db-config:
+#         column-underline: true
+
+#   mail:
+#     # 配置 smtp 服务主机地址
+#     # qq 邮箱     smtp.qq.com    端口号 465 或 587
+#     # sina       smtp.sina.com
+#     # aliyun     smtp.aliyun.com
+#     # 163        smtp.163.com   端口号 465 或 994
+#     host: smtp.126.com
+#     # 发送者邮箱
+#     username: freegpt_web@126.com
+#     # 在邮箱内申请的授权码
+#     password: UVALURZJIYHZEXFL
+#     # 端口号
+#     port: 465
+#     # 默认的邮件编码为UTF-8
+#     default-encoding: UTF-8
+#     # 其他参数
+#     properties:
+#       mail:
+#         # 配置SSL 加密工厂
+#         smtp:
+#           ssl:
+#             # 本地测试， 先放开ssl
+#             enable: true
+#             required: true
+#           #开启debug模式，这样邮件发送过程的日志会在控制台打印出来，方便排查错误
+#         debug: true
+
+# # 管路员账号，以逗号分开
+#   manager.accounts: "2504420230@qq.com"
+
+# file-save-path: "/www/wwwroot/default/mjImage/"
+
+# file-token-path: "sk-onZOIeQmV6syyOP7Ac71D9EfF45943Ed83CeC5348c45B2Aa"
